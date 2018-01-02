@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
-import Console from 'consolelog';
 import LoaderButton from './LoaderButton';
 import '../css/Login.css';
 
@@ -28,7 +27,7 @@ export default class Login extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    Console.log('handleSubmit');
+    console.log('handle submit');
   }
 
   render() {
