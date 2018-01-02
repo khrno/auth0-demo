@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem, Nav } from 'react-bootstrap';
 import './css/App.css'
-import Home from './components/Home';
+import Routes from './Routes';
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class App extends Component {
           </Navbar.Collapse>
         </Navbar>
         <div className="content">
-          <Home />
+          <Routes />
         </div>
       </div>
     )
