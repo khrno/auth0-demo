@@ -1,0 +1,21 @@
+PLATFORM_USER: 'root'
+
+
+development:
+  PLATFORM_PASSWORD: ''
+  MYSQL_DATABASE: 'auth0_demo_development'
+  MYSQL_USERNAME: 'root'
+  MYSQL_PASSWORD: ''
+  MYSQL_POOL: '100'
+  MYSQL_TIMEOUT: '5000'
+  MYSQL_HOST: 'db.modyo.me'
+
+production:
+  PLATFORM_PASSWORD: '6XC909m8Pjmttxpb'
+
+  MYSQL_DATABASE: 'auth0_demo_development'
+  MYSQL_USERNAME: 'root'
+  MYSQL_PASSWORD: 'CpDpGjtS7dh7Gfwu'
+  MYSQL_POOL: '100'
+  MYSQL_TIMEOUT: '5000'
+  MYSQL_HOST: 'db.modyo.me'
