@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Navbar, NavItem, Nav } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import RouteNavItem from './utils/RouteNavItem';
 import './css/App.css';
 import Routes from './Routes';
 
@@ -27,9 +28,9 @@ class App extends Component {
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav pullRight>
-                <NavItem><Link to="/login">Login</Link></NavItem>
-                <NavItem><Link to="/logout">Logout</Link></NavItem>
-                <NavItem><Link to="/signup">Signup</Link></NavItem>
+                <RouteNavItem key={1} href="/login">Login</RouteNavItem>
+                <RouteNavItem key={2} href="/logout">Logout</RouteNavItem>
+                <RouteNavItem key={3} href="/signup">Signup</RouteNavItem>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
