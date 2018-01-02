@@ -2,23 +2,27 @@ import React, { Component } from 'react';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import LoaderButton from './LoaderButton';
 
-export default class Login extends Component {
+export default class Signup extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       isLoading: false,
       email: '',
       password: '',
+      confirmPassword: '',
     };
   }
 
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+    return (
+      this.state.email.length > 0 &&
+      this.state.password.length > 0 &&
+      this.state.password === this.state.confirmPassword
+    );
   }
 
   handleChange(event) {
-    event.preventDefault();
-
     this.setState({
       [event.target.id]: event.target.value,
     });
@@ -27,12 +31,12 @@ export default class Login extends Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state);
-    console.log('login handlesubmit()');
+    console.log('signup handlesubmit()');
   }
 
   render() {
     return (
-      <div className="login">
+      <div className="Signup">
         <form onSubmit={e => this.handleSubmit(e)}>
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
@@ -51,14 +55,22 @@ export default class Login extends Component {
               onChange={e => this.handleChange(e)}
             />
           </FormGroup>
+          <FormGroup controlId="confirmPassword" bsSize="large">
+            <ControlLabel>Confirm Password</ControlLabel>
+            <FormControl
+              type="confirmPassword"
+              value={this.state.confirmPassword}
+              onChange={e => this.handleChange(e)}
+            />
+          </FormGroup>
           <LoaderButton
             block
             bsSize="large"
             disabled={!this.validateForm()}
             type="submit"
             isLoading={this.state.isLoading}
-            text="Login"
-            loadingText="Logging in..."
+            text="SignUp"
+            loadingText="Signing in..."
           />
         </form>
       </div>
