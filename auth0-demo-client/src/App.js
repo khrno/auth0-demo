@@ -1,20 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Navbar, NavItem, Nav } from 'react-bootstrap';
+import './css/App.css'
+import Home from './components/Home';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isAuthenticated: false,
+      isAuthenticating: false
+    };
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="App container">
+        <Navbar fluid collapseOnSelect inverse fixedTop>
+          <Navbar.Header>
+            <Navbar.Brand>
+              Demo - Client
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight>
+              <NavItem>Logout</NavItem>
+              <NavItem>SignUp</NavItem>
+              <NavItem>Login</NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <div className="content">
+          <Home />
+        </div>
       </div>
-    );
+    )
   }
 }
 
