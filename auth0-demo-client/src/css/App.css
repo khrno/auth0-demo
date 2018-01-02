@@ -1,3 +1,10 @@
 .content {
-    padding: 50px;
+    padding-top: 80px;
+}
+
+.not-found {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    text-align: center;
 }
