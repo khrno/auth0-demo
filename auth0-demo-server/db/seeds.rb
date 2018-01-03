@@ -5,3 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+unless Rails.env.test?
+  puts 'Load example data'
+
+  User.create(username: 'portega', email: 'portega@modyo.com',
+              password: 'q1w2e3r4')
+
+  User.create(username: Faker::Internet.user_name, email: Faker::Internet.safe_email,
+              password: Faker::Internet.password)
+
+  User.create(username: Faker::Internet.user_name, email: Faker::Internet.safe_email,
+              password: Faker::Internet.password)
+
+  User.create(username: Faker::Internet.user_name, email: Faker::Internet.safe_email,
+              password: Faker::Internet.password)
+end
