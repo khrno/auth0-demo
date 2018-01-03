@@ -49,4 +49,3 @@ end
 gem 'puma'
 gem 'figaro'
 gem 'faker'
-gem 'bcrypt-ruby'
